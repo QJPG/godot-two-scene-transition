@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp3iy5w2wwr8n"]
+
+[ext_resource type="PackedScene" uid="uid://5wxt724xdlbm" path="res://addons/bettergd/test/test-b.fbx" id="1_hy3yp"]
+
+[node name="B" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_hy3yp")]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://ilmtakwfnh6t"]
+
+[ext_resource type="PackedScene" uid="uid://bgu1o7gt3mvun" path="res://addons/bettergd/test/test-a.fbx" id="1_dceyt"]
+[ext_resource type="Script" path="res://addons/bettergd/src/sxtrans.gd" id="2_ytrah"]
+[ext_resource type="PackedScene" uid="uid://dp3iy5w2wwr8n" path="res://addons/bettergd/test/b.tscn" id="3_fl7n3"]
+[ext_resource type="PackedScene" uid="uid://dit6ln6xu7shk" path="res://prefabs/player.tscn" id="4_qli4p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qogqe"]
+size = Vector3(1.12683, 3.24719, 3.6239)
+
+[node name="A" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_dceyt")]
+
+[node name="Player" parent="." instance=ExtResource("4_qli4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29626, -5.09561)
+
+[node name="BttTwoSceneTransition" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14536, 0, 2.87278)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_ytrah")
+next_scene = ExtResource("3_fl7n3")
+
+[node name="0" type="CollisionShape3D" parent="BttTwoSceneTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25942, 1.1236, 1.31195)
+shape = SubResource("BoxShape3D_qogqe")
+
+[node name="1" type="CollisionShape3D" parent="BttTwoSceneTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69774, 1.1236, 1.31195)
+shape = SubResource("BoxShape3D_qogqe")
